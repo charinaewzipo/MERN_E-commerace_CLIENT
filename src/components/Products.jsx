@@ -27,7 +27,7 @@ const Products = ({ cat, filters, sort }) => {
             : `${process.env.REACT_APP_API}/products/random`
         );
         setProducts(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch (error) {}
     };
     getProducts();

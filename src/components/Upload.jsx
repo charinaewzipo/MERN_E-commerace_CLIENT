@@ -112,13 +112,13 @@ const Upload = ({ setOpen }) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setImgPerc(progress);
-        console.log("Upload is " + progress + "% done");
+        // console.log("Upload is " + progress + "% done");
         switch (snapshot.state) {
           case "paused":
-            console.log("Upload is paused");
+            // console.log("Upload is paused");
             break;
           case "running":
-            console.log("Upload is running");
+            // console.log("Upload is running");
             break;
         }
       },
@@ -174,7 +174,7 @@ const Upload = ({ setOpen }) => {
           withCredentials: true,
         }
       );
-      console.log(res.data);
+      // console.log(res.data);
       Swal.fire({
         title: "Upload was successful!!",
         text: res.data.title,
@@ -185,11 +185,11 @@ const Upload = ({ setOpen }) => {
       });
       setOpen(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
-  console.log(cat);
+  // console.log(cat);
   return (
     <Container>
       <Wrapper>
