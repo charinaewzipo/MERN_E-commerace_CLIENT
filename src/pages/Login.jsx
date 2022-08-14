@@ -80,7 +80,10 @@ const Login = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auths/login", { username, password });
+      const res = await axios.post(`${process.env.REACT_APP_API}/auths/login`, {
+        username,
+        password,
+      });
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {

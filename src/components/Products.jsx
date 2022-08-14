@@ -22,7 +22,9 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          cat ? `/products?category=${cat}` : `/products/random`
+          cat
+            ? `${process.env.REACT_APP_API}/products?category=${cat}`
+            : `${process.env.REACT_APP_API}/products/random`
         );
         setProducts(res.data);
         console.log(res.data);

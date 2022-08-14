@@ -120,7 +120,9 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`/products/find/${id}`);
+        const res = await axios.get(
+          `${process.env.REACT_APP_API}/products/find/${id}`
+        );
         setProduct(res.data);
         console.log(res.data);
       } catch (error) {}

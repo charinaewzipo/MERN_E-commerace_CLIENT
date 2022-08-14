@@ -73,11 +73,14 @@ const Register = () => {
       password === confPassword
     ) {
       try {
-        const signup = await axios.post("/auths/register", {
-          username: username,
-          email: email,
-          password: password,
-        });
+        const signup = await axios.post(
+          `${process.env.REACT_APP_API}/auths/register`,
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
 
         const Toast = Swal.mixin({
           toast: true,

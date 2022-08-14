@@ -162,12 +162,15 @@ const Upload = ({ setOpen }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/products/add", {
-        ...inputs,
-        categories: cat,
-        color: color,
-        size: size,
-      });
+      const res = await axios.post(
+        `${process.env.REACT_APP_API}/products/add`,
+        {
+          ...inputs,
+          categories: cat,
+          color: color,
+          size: size,
+        }
+      );
       console.log(res.data);
       Swal.fire({
         title: "Upload was successful!!",
