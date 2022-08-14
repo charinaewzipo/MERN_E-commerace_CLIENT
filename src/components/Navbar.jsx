@@ -8,6 +8,7 @@ import {
   Search,
   ShoppingCartOutlined,
 } from "@material-ui/icons";
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -100,8 +101,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handlelogout = () => {
+  const handlelogout = async () => {
     dispatch(logout());
+    await axios.get(`${process.env.REACT_APP_API}/auths/logout`, {
+      withCredentials: true,
+    });
     navigate("/login");
   };
   return (
