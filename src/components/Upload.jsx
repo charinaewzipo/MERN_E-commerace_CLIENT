@@ -169,6 +169,9 @@ const Upload = ({ setOpen }) => {
           categories: cat,
           color: color,
           size: size,
+        },
+        {
+          withCredentials: true,
         }
       );
       console.log(res.data);

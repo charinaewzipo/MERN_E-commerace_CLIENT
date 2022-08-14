@@ -79,6 +79,9 @@ const Register = () => {
             username: username,
             email: email,
             password: password,
+          },
+          {
+            withCredentials: true,
           }
         );
 
