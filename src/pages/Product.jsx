@@ -124,7 +124,7 @@ const Product = () => {
           `${process.env.REACT_APP_API}/products/find/${id}`
         );
         setProduct(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch (error) {}
     };
     getProduct();
