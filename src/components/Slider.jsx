@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { sliderItems } from "../utills/data";
+import { mobile } from "../utills/responsive";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -11,6 +12,7 @@ const Container = styled.div`
   /* background-color: oldlace; */
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `;
 
 const Wrapper = styled.div`

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import Swal from "sweetalert2";
+import { mobile } from "../utills/responsive";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -24,6 +25,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  ${mobile({ width: "50%" })}
 `;
 
 const Title = styled.h1`
@@ -57,6 +59,7 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  ${mobile({ width: "100%" })}
 `;
 const Links = styled.a`
   margin: 5px 0px;
